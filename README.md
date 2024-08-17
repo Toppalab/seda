@@ -1,11 +1,14 @@
-# Clone project repository
+**Clone project repository**
+```
 cd && rm -rf seda-chain
 git clone https://github.com/sedaprotocol/seda-chain
 cd seda-chain
 git checkout v0.1.1
-
-# Build binary
+```
+**Build binary**
+```
 make install
+```
 
 # Set node CLI configuration
 sedad config set client chain-id seda-1
