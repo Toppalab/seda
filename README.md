@@ -10,10 +10,12 @@ git checkout v0.1.1
 make install
 ```
 
-# Set node CLI configuration
+**Set node CLI configuration**
+```
 sedad config set client chain-id seda-1
 sedad config set client keyring-backend file
 sedad config set client node tcp://localhost:25857
+```
 
 # Initialize the node
 sedad init "Your Node Name" --chain-id seda-1
