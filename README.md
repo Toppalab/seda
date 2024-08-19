@@ -17,12 +17,16 @@ sedad config set client keyring-backend file
 sedad config set client node tcp://localhost:25857
 ```
 
-# Initialize the node
+**Initialize the node**
+```
 sedad init "Your Node Name" --chain-id seda-1
+```
 
-# Download genesis and addrbook files
+**Download genesis and addrbook files**
+```
 curl -L https://snapshots.nodejumper.io/seda/genesis.json > $HOME/.sedad/config/genesis.json
 curl -L https://snapshots.nodejumper.io/seda/addrbook.json > $HOME/.sedad/config/addrbook.json
+```
 
 # Set seeds
 sed -i -e 's|^seeds *=.*|seeds = "31f54fbcf445a9d9286426be59a17a811dd63f84@18.133.231.208:26656,ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:25856,cec848e7d4c5a7ae305b27cda133d213435c110f@seed-seda.ibs.team:16679,400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@seda.rpc.kjnodes.com:17359,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:25856,cec848e7d4c5a7ae305b27cda133d213435c110f@seed-seda.ibs.team:16679,ebc272824924ea1a27ea3183dd0b9ba713494f83@seda-mainnet-seed.autostake.com:26866,c28827cb96c14c905b127b92065a3fb4cd77d7f6@seeds.whispernode.com:25856,b85358e035343a3b15e77e1102857dcdaf70053b@seeds.bluestake.net:24656,31f54fbcf445a9d9286426be59a17a811dd63f84@18.133.231.208:26656"|' $HOME/.sedad/config/config.toml
