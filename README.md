@@ -47,12 +47,16 @@ sed -i \
   $HOME/.sedad/config/app.toml
 ```
 
-# Change ports
+**Change ports**
+```
 sed -i -e "s%:1317%:25817%; s%:8080%:25880%; s%:9090%:25890%; s%:9091%:25891%; s%:8545%:25845%; s%:8546%:25846%; s%:6065%:25865%" $HOME/.sedad/config/app.toml
 sed -i -e "s%:26658%:25858%; s%:26657%:25857%; s%:6060%:25860%; s%:26656%:25856%; s%:26660%:25861%" $HOME/.sedad/config/config.toml
+```
 
-# Download latest chain data snapshot
+**Download latest chain data snapshot**
+```
 curl "https://snapshots.nodejumper.io/seda/seda_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.sedad"
+```
 
 # Create a service
 sudo tee /etc/systemd/system/sedad.service > /dev/null << EOF
