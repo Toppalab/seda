@@ -58,7 +58,8 @@ sed -i -e "s%:26658%:25858%; s%:26657%:25857%; s%:6060%:25860%; s%:26656%:25856%
 curl "https://snapshots.nodejumper.io/seda/seda_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.sedad"
 ```
 
-# Create a service
+**Create a service**
+```
 sudo tee /etc/systemd/system/sedad.service > /dev/null << EOF
 [Unit]
 Description=SEDA node service
@@ -74,6 +75,7 @@ WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
 sudo systemctl enable sedad.service
+```
 
 # Start the service and check the logs
 sudo systemctl start sedad.service
