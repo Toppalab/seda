@@ -77,6 +77,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable sedad.service
 ```
 
-# Start the service and check the logs
+**Start the service and check the logs**
+```
 sudo systemctl start sedad.service
 sudo journalctl -u sedad.service -f --no-hostname -o cat
+```
